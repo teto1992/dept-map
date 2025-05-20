@@ -67,6 +67,8 @@ r = pdk.Deck(
     map_style='https://basemaps.cartocdn.com/gl/positron-gl-style/style.json'  # stile chiaro, free
 )
 
+st.html("<style>[data-testid='stHeaderActionElements'] {display: none;}</style>")
+
 
 cherubino_url = "https://www.unipi.it/wp-content/uploads/Raggruppa-3020.svg"
 
@@ -74,7 +76,9 @@ st.markdown(
     f"""
     <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
         <a href="https://www.unipi.it/"><img src="{cherubino_url}" alt="Cherubino UniPi" width="200"></a>
-        <a href="https://www.di.unipi.it/"><h5 style="color:#003C71; margin:0;">Dipartimento di Informatica</h5></a>
+        <h5 style="color:#003C71; margin:0;">Dipartimento di Informatica</h5><br>
+       <h5 style="color:silver; margin:0;">Department of Computer Science</h5>
+
     </div>
     """,
     unsafe_allow_html=True
