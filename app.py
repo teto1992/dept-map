@@ -8,11 +8,9 @@ visitors = [
     {'name': 'Dr. Rossi', 'lat': 43.7167, 'lon': 10.4, 'affiliation': 'UniPi'},
 ]
 
-# Creazione del DataFrame
 df = pd.DataFrame(visitors)
 
-
-# Definizione dell'icona personalizzata
+# Pinpoint per le icone
 icon_data = {
     "url": "https://png.pngtree.com/png-vector/20220630/ourmid/pngtree-location-pin-point-marker-placeholder-png-image_5326979.png",
     "width":65,
@@ -36,11 +34,11 @@ icon_layer = pdk.Layer(
     pickable=True,
 )
 
-# Definizione della vista iniziale
+# Vista iniziale
 view_state = pdk.ViewState(
     latitude=0,
     longitude=0,
-    zoom=0.5,    # più basso = vista globale
+    zoom=0.5,    # tutto il mondo
     pitch=0,
 )
 
@@ -49,7 +47,7 @@ r = pdk.Deck(
     layers=[icon_layer],
     initial_view_state=view_state,
     tooltip={"text": "{name} ({affiliation})"},
-    map_style='https://basemaps.cartocdn.com/gl/positron-gl-style/style.json'  # <- stile chiaro!
+    map_style='https://basemaps.cartocdn.com/gl/positron-gl-style/style.json'  # stile chiaro, free
 )
 
 
@@ -65,8 +63,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-#st.title("Mappa dei Visitatori")
 st.write("Questa è una mappa dei visitatori del Dipartimento di Informatica dell'Università di Pisa.")
 
-# Visualizzazione della mappa in Streamlit
 st.pydeck_chart(r)
