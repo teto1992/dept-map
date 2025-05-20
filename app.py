@@ -10,6 +10,13 @@ hide_decoration_bar_style = '''
      }
     </style>
     '''
+
+st.set_page_config(
+    page_title="Mappa Visitatori - UniPi",
+    page_icon="🧭",
+    layout="wide"
+)
+
 st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
 
 # Dati dei visitatori
@@ -66,15 +73,14 @@ cherubino_url = "https://www.unipi.it/wp-content/uploads/Raggruppa-3020.svg"
 st.markdown(
     f"""
     <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-        <img src="{cherubino_url}" alt="Cherubino UniPi" width="200">
-        Dipartimento di Informatica<br>
+        <a href="https://www.unipi.it/"><img src="{cherubino_url}" alt="Cherubino UniPi" width="200"></a>
+        <a href="https://www.di.unipi.it/"><h5 style="color:#003C71; margin:0;">Dipartimento di Informatica</h5></a>
     </div>
     """,
     unsafe_allow_html=True
 )
 
 
-
-st.write("Questa è una mappa dei visitatori del Dipartimento di Informatica dell'Università di Pisa.")
+st.write("Questa è una mappa delle connessioni del Dipartimento di Informatica dell'Università di Pisa")
 
 st.pydeck_chart(r)
