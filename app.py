@@ -2,6 +2,16 @@ import streamlit as st
 import pydeck as pdk
 import pandas as pd
 
+hide_decoration_bar_style = '''
+    <style>
+        header {visibility: hidden;}
+        .block-container {
+        padding-top: 1rem !important;
+     }
+    </style>
+    '''
+st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
+
 # Dati dei visitatori
 visitors = [
     {'name': 'Prof. Smith', 'lat': 51.5074, 'lon': -0.1278, 'affiliation': 'UCL'},
@@ -62,6 +72,8 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+
 
 st.write("Questa è una mappa dei visitatori del Dipartimento di Informatica dell'Università di Pisa.")
 
