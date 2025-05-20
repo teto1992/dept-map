@@ -12,7 +12,7 @@ hide_decoration_bar_style = '''
     '''
 
 st.set_page_config(
-    page_title="Mappa Visitatori - UniPi",
+    page_title="Connessioni Informatica UniPi",
     page_icon="🧭",
     layout="wide"
 )
